@@ -261,7 +261,7 @@
 
     /* ============ CUSTOM HERO VIDEO PLAYER ============ */
     /* Minimal sage player: click to play/pause, drag the playbar, fullscreen. */
-    /* No other controls. Always plays at 1.75x with pitch preserved (script). */
+    /* No other controls. Always plays at 1.5x with pitch preserved (script).  */
     .vplayer {
       position: absolute;
       inset: 0;
@@ -1467,7 +1467,7 @@
         <!-- Self-hosted walkthrough (720p MP4, faststart, pulled from the       -->
         <!-- Wistia master and served from the site root). Native <video> plays  -->
         <!-- progressively so it starts instantly on desktop — no HLS engine.    -->
-        <!-- Native controls + fullscreen; plays at 1.75x with pitch preserved   -->
+        <!-- Native controls + fullscreen; plays at 1.5x with pitch preserved    -->
         <!-- via the hero-video script below.                                    -->
         <div class="video-frame fade-up mt-7">
           <div class="vplayer" id="vplayer" tabindex="0" aria-label="Walkthrough video">
@@ -2569,8 +2569,8 @@
     })();
 
     // ===========================================================
-    // HERO VIDEO — HARDWIRED 1.75x PLAYBACK, PITCH PRESERVED
-    // The self-hosted walkthrough plays at 1.75x so it stays short. preservesPitch
+    // HERO VIDEO — HARDWIRED 1.5x PLAYBACK, PITCH PRESERVED
+    // The self-hosted walkthrough plays at 1.5x so it stays short. preservesPitch
     // keeps the audio at its natural pitch (no chipmunk effect), so the faster
     // playback still looks and sounds normal. The rate is re-applied on load and
     // on play because some engines reset playbackRate when the media (re)loads,
@@ -2588,10 +2588,10 @@
       var played = document.getElementById("vp-played");
       var buffered = document.getElementById("vp-buffered");
       var handle = document.getElementById("vp-handle");
-      var RATE = 1.75;
+      var RATE = 1.5;
       var idleTimer = null;
 
-      // --- Hardwired 1.75x, pitch preserved (re-applied on load + play) ---
+      // --- Hardwired 1.5x, pitch preserved (re-applied on load + play) ---
       function applyRate() {
         if ("preservesPitch" in v) v.preservesPitch = true;
         if ("mozPreservesPitch" in v) v.mozPreservesPitch = true;
