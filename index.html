@@ -261,7 +261,7 @@
 
     /* ============ CUSTOM HERO VIDEO PLAYER ============ */
     /* Minimal sage player: click to play/pause, drag the playbar, fullscreen. */
-    /* No other controls. Always plays at 1.5x with pitch preserved (script).  */
+    /* No other controls. Always plays at 1.75x with pitch preserved (script). */
     .vplayer {
       position: absolute;
       inset: 0;
@@ -1467,7 +1467,7 @@
         <!-- Self-hosted walkthrough (720p MP4, faststart, pulled from the       -->
         <!-- Wistia master and served from the site root). Native <video> plays  -->
         <!-- progressively so it starts instantly on desktop — no HLS engine.    -->
-        <!-- Native controls + fullscreen; plays at 1.5x with pitch preserved    -->
+        <!-- Native controls + fullscreen; plays at 1.75x with pitch preserved   -->
         <!-- via the hero-video script below.                                    -->
         <div class="video-frame fade-up mt-7">
           <div class="vplayer" id="vplayer" tabindex="0" aria-label="Walkthrough video">
@@ -1620,11 +1620,11 @@
                 <!-- Direct-to-camera (was "Video") -->
                 <article class="block-card mt-6">
                   <button class="info-btn" type="button" data-info="inst-cold-ad-dtc"><span aria-hidden="true">i</span></button>
-                  <p class="sample-label">Direct-to-camera</p>
+                  <p class="sample-label">Talking-head</p>
                   <div class="mt-6">
                     <a class="cta-button cta-sm"
                        href="Sample%20Deliverables/Paid%20Ads%20%26%20Webinar%20Funnel/Ad%20Creatives/Video/Direct-to-camera.pdf"
-                       data-lb data-lb-type="pdf" data-lb-title="Direct-to-camera ad script"
+                       data-lb data-lb-type="pdf" data-lb-title="Talking-head ad script"
                        target="_blank" rel="noopener noreferrer">
                       <span class="cta-main">Get A Closer View</span>
                       <span class="cta-sub">Click here to open it up...</span>
@@ -2014,7 +2014,7 @@
         },
         // --- Instances: Cold › Ad Creatives › Video ---
         "inst-cold-ad-dtc": {
-          title: "Direct-to-camera",
+          title: "Talking-head",
           body: "A video asset consisting of a speaker talking straight to the viewer that gets shown to the cold traffic leads."
         },
 
@@ -2569,8 +2569,8 @@
     })();
 
     // ===========================================================
-    // HERO VIDEO — HARDWIRED 1.5x PLAYBACK, PITCH PRESERVED
-    // The self-hosted walkthrough plays at 1.5x so it stays short. preservesPitch
+    // HERO VIDEO — HARDWIRED 1.75x PLAYBACK, PITCH PRESERVED
+    // The self-hosted walkthrough plays at 1.75x so it stays short. preservesPitch
     // keeps the audio at its natural pitch (no chipmunk effect), so the faster
     // playback still looks and sounds normal. The rate is re-applied on load and
     // on play because some engines reset playbackRate when the media (re)loads,
@@ -2588,10 +2588,10 @@
       var played = document.getElementById("vp-played");
       var buffered = document.getElementById("vp-buffered");
       var handle = document.getElementById("vp-handle");
-      var RATE = 1.5;
+      var RATE = 1.75;
       var idleTimer = null;
 
-      // --- Hardwired 1.5x, pitch preserved (re-applied on load + play) ---
+      // --- Hardwired 1.75x, pitch preserved (re-applied on load + play) ---
       function applyRate() {
         if ("preservesPitch" in v) v.preservesPitch = true;
         if ("mozPreservesPitch" in v) v.mozPreservesPitch = true;
